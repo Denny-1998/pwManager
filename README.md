@@ -18,3 +18,6 @@ This would be a requirement if the project had a cloud database and with that an
 ## Diagrams
 A general overview of the projects architecture and the used algorithms 
 ![image](https://github.com/Denny-1998/pwManager/assets/89900734/77a6a937-be69-4ad4-862d-7a84e2e51358)
+
+The database table 
+![image](https://github.com/Denny-1998/pwManager/assets/89900734/2b303088-c358-465e-aa17-ae45ab9beb29)
