@@ -7,6 +7,55 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        
+        <StackPanel Margin="20">
+            <Button x:Name="add" Content="add new" Margin="10" Click="add_Click"></Button>
+            <Separator Margin="5,10,5,10"></Separator>
+
+            <StackPanel>
+                <!-- Name TextBox -->
+                <TextBox x:Name="NameTextBox" Text="{Binding SelectedItem.Name, ElementName=accountListBox, Mode=OneWay}" Margin="10" Background="LightGray"/>
+
+                <!-- Username TextBox -->
+                <TextBox x:Name="UsernameTextBox" Text="{Binding SelectedItem.UserName, ElementName=accountListBox, Mode=OneWay}" Margin="10" Background="LightGray"/>
+
+                <!-- Password TextBox -->
+                <TextBox x:Name="PasswordTextBox" Text="{Binding SelectedItem.Password, ElementName=accountListBox, Mode=OneWay}" Margin="10" Background="LightGray"/>
+                
+                <!-- Edit Button -->
+                <Button x:Name="EditButton" Content="Edit" Click="EditButton_Click" Margin="10"/>
+            </StackPanel>
+            
+            <Separator Margin="5,10,5,10"></Separator>
+
+            <Button x:Name="deleteButton" Content="delete" Margin="10" Click="deleteButton_Click"></Button>
+
+
+
+        </StackPanel>
+
+     
+
+
+        <ListBox x:Name="accountListBox" Grid.Column="1" Margin="20"
+                 SelectionChanged="accountListBox_SelectionChanged"
+                 ItemsSource="{Binding decryptedAccounts}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                        <TextBlock Text="{Binding UserName}" />
+                        <TextBlock Text="{Binding Password}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
 
     </Grid>
 </Window>
